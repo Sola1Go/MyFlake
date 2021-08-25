@@ -22,10 +22,26 @@
         overlays = [
           (final: prev: {
             alpha-research = inputs.alpha-research.defaultPackage."${system}";
+            run-fish-test = pkgs.nixosTest ./test/fish.nix;
           })
         ];
       };
     in {
+
+      defaultPackage."${system}" = pkgs.run-fish-test;
+
+      devShell."${system}" = pkgs.mkShell rec {
+        name = "nix-test";
+
+        buildInputs = [ ];
+
+        defaultPackage = pkgs.run-fish-test;
+
+        shellHook = ''
+          export PS1="$(echo -e '\uf3e2') {\[$(tput sgr0)\]\[\033[38;5;228m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]} (${name}) \\$ \[$(tput sgr0)\]"
+        '';
+      };
+
       nixosConfigurations = {
 
         lxb = nixpkgs.lib.nixosSystem rec {
@@ -33,18 +49,6 @@
           modules = [ ./machines/lxb ];
         };
 
-      };
-
-      devShell."${system}" = pkgs.mkShell rec {
-        name = "nix-test";
-
-        buildInputs = [ ];
-
-        defaultPackage = pkgs.nixosTest ./test/fish.nix;
-
-        shellHook = ''
-          export PS1="$(echo -e '\uf3e2') {\[$(tput sgr0)\]\[\033[38;5;228m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]} (${name}) \\$ \[$(tput sgr0)\]"
-        '';
       };
 
     };
