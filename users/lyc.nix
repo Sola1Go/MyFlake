@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }: {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
-    users.lxb = {
+    users.lyc = {
       isNormalUser = true;
       uid = 1001;
-      home = "/home/lxb";
+      home = "/home/lyc";
       extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
       shell = pkgs.fish;
     };
