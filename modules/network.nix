@@ -5,9 +5,8 @@
 
   networking.hostName = "lxb";
   # head -c 8 /etc/machine-id
-  networking.hostId = "8d885cfc";
-
-  networking.interfaces.wlp165s0.useDHCP = true;
+  networking.hostId = "e6164dca";
+  
 
   nixpkgs.config.allowUnfree = true;
 
