@@ -3,7 +3,7 @@
 {
   networking.useDHCP = false;
 
-  networking.hostName = "lxb";
+  networking.hostName = "lyc";
   # head -c 8 /etc/machine-id
   networking.hostId = "e6164dca";
   

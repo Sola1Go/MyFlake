@@ -8,7 +8,7 @@
     supportedFeatures = [ "kvm" "nixos-test" "big-parallel" "benchmark" ];
     speedFactor = 2;
     sshUser = "root";
-    maxJobs = 1;
+    maxJobs = 3;
   }];
   nix.extraOptions = ''
     builders-use-substitutes = true
