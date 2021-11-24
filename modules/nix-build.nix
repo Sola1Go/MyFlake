@@ -13,4 +13,15 @@
   nix.extraOptions = ''
     builders-use-substitutes = true
   '';
+
+  nix.binaryCaches = lib.mkForce [
+      "http://sisyphus:3001/"
+      "https://cache.nixos.org/"
+    ];
+
+  nix.binaryCachePublicKeys =
+      [ "sisyphus:A+04lWKcliP1HDMpJZCvjPwM0ZMPjRpU8zijgDsHjpk=" ];
+
+  nix.trustedBinaryCaches = [ "http://sisyphus:3001/" ];
+
 }
