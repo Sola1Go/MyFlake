@@ -4,7 +4,7 @@ let
   cfg = config.services.borgbackup;
 
   backup-service = serviceName: path: repo: {
-    user = "lxb";
+    user = "lyc";
     group = "users";
     paths = [ path ];
     archiveBaseName = serviceName;
@@ -14,7 +14,7 @@ let
     repo = repo;
     encryption = { mode = "none"; };
     environment.BORG_RELOCATED_REPO_ACCESS_IS_OK = "yes";
-    environment.BORG_RSH = "ssh -i /home/lxb/work/AWS/aws-china.pem";
+    environment.BORG_RSH = "ssh -i /home/lyc/work/AWS/aws-china.pem";
     compression = "auto,lzma";
     startAt = "daily";
   };

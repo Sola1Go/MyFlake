@@ -3,8 +3,8 @@
     enable = true;
     ip = "localhost";
     port = 5555;
-    notebookDir = "/home/lxb/python";
-    user = "lxb";
+    notebookDir = "/home/lyc/python";
+    user = "lyc";
     group = "users";
     password =
       "'argon2:$argon2id$v=19$m=10240,t=10,p=8$OEgjjTojGX8e+bmi431VBg$WjUsHTZdM2EOIjpwgn5dXw'";
@@ -35,6 +35,7 @@
             matplotlib
             websockets
             black
+            redis
           ]));
       in {
         displayName = "Python 3";

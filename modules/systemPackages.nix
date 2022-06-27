@@ -95,6 +95,7 @@
         websockets
         black
         beancount
+        redis
       ]))
     # GO
     go
