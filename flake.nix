@@ -4,7 +4,7 @@
 
   inputs = {
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
@@ -29,7 +29,7 @@
             ({
               nixpkgs.overlays = [
                 (final: prev: {
-                  google-chrome-latest = pkgs-unstable.google-chrome-beta;
+                  vscode-latest = pkgs-unstable.vscode;
                 })
               ];
             })

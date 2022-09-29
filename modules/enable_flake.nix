@@ -5,9 +5,9 @@
 {
   config = {
     nix = {
-      package = pkgs.nixFlakes;
+      package = pkgs.nix;
       extraOptions = ''
-        experimental-features = nix-command flakes ca-references
+        experimental-features = nix-command flakes
       '';
     };
 

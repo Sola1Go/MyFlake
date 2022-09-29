@@ -11,7 +11,7 @@
     # Fira code is a good font for coding
     fira-code
     fira-code-symbols
-    font-awesome-ttf
+    font-awesome
     inconsolata
   ];
 
@@ -27,7 +27,7 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.gnome.chrome-gnome-shell.enable = true;
   services.gnome.gnome-remote-desktop.enable = true;
-  system.stateVersion = "21.05";
+  system.stateVersion = "22.05";
 
   virtualisation.docker.enable = true;
 
