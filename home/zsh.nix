@@ -1,4 +1,10 @@
 { config, pkgs, lib, ... }: {
+    programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    # nix-direnv.enableFlakes = true;
+  };
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -21,6 +27,8 @@
       bindkey "^[[3~"   delete-char
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
+      POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+      eval "$(direnv hook zsh)"
       # autoload -U compinit && compinit
     '';
 
