@@ -4,7 +4,7 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/i18n.nix
-    ../../modules/binaryCaches.nix
+    # ../../modules/binaryCaches.nix
     ../../modules/systemPackages.nix
     ../../modules/enable_flake.nix
     ../../modules/network.nix
@@ -20,6 +20,7 @@
     # ../../modules/service/jsy-archiver
     # ../../modules/service/redis
     ../../users/lyc.nix
+    ../../users/maho.nix
   ];
 
 }

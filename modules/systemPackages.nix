@@ -24,7 +24,6 @@
     tig
     tmux
     starship
-    fish
     z-lua
     bat
     tree
@@ -34,6 +33,7 @@
     remmina
     borgbackup
     jq
+    home-manager
 
     # Work
     vscode-latest

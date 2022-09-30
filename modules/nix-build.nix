@@ -14,14 +14,12 @@
     builders-use-substitutes = true
   '';
 
-  nix.binaryCaches = lib.mkForce [
-      "http://sisyphus:3001/"
-      "https://cache.nixos.org/"
-    ];
 
-  nix.binaryCachePublicKeys =
+  nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" "http://sisyphus:3001/"];
+
+  nix.settings.trusted-public-keys =
       [ "sisyphus:A+04lWKcliP1HDMpJZCvjPwM0ZMPjRpU8zijgDsHjpk=" ];
 
-  nix.trustedBinaryCaches = [ "http://sisyphus:3001/" ];
+  nix.settings.trusted-substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" "http://sisyphus:3001/" ];
 
 }
