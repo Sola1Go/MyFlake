@@ -7,9 +7,14 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable,... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -36,6 +41,16 @@
             ./machines/lyc
           ];
         };
+      };
+
+      homeConfigurations.lyc = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgs-unstable;
+
+        modules = [
+          ./home/user-lyc.nix
+          ./home/zsh.nix
+        ];
+
       };
     };
 }
