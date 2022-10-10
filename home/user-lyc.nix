@@ -1,5 +1,3 @@
-
-
 { config, pkgs, ... }:
 
 {
@@ -20,7 +18,14 @@
       key = "30356570@qq.com";
       signByDefault = false;
     };
+
+    extraConfig = {
+      push.default = "current";
+      push.autoSetupRemote = "true";
+    };
   };
+
+
 
   home.file = {
     ".config/nix/nix.conf".source = ./files/.config/nix/nix.conf;
