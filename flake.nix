@@ -59,6 +59,7 @@
         modules = [
           ./home/user-maho.nix
           ./home/zsh.nix
+          ./home/vscode-server.nix
         ];
 
       };
