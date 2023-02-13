@@ -49,6 +49,7 @@
         modules = [
           ./home/user-lyc.nix
           ./home/zsh.nix
+          ./home/vscode-server.nix
         ];
 
       };
